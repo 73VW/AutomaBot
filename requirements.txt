@@ -3,3 +3,4 @@ discord.py==0.16.8
 aiohttp==2.1.0
 requests==2.17.0
 hug==2.3.0
+pycodestyle>=2.3.0
