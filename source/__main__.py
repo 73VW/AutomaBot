@@ -72,12 +72,12 @@ if __name__ == "__main__":
     app = make_app(queue.put)
 
     loop = asyncio.get_event_loop()
-
+    print(loop)
     if debug:
         loop.set_debug(True)
         logging.getLogger('asyncio').setLevel(logging.DEBUG)
 
-    handler = app.make_handler(loop=loop)
+    handler = app.make_handler()
     loop.run_until_complete(app.startup())
 
     server = loop.create_server(handler, host=HOST, port=PORT)
