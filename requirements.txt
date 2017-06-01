@@ -32,6 +32,7 @@ python-mimeparse==1.6.0
 pytz==2017.2
 PyYAML==3.12
 requests==2.17.0
+rstcheck==3.1
 six==1.10.0
 snowballstemmer==1.2.1
 Sphinx==1.6.2
