@@ -85,7 +85,7 @@ if __name__ == "__main__":
         srv = loop.run_until_complete(server)
         with open('art.txt', 'r', encoding='utf-8') as f:
             print(f.read())
-        print(f"###\n#\n#\t\tListening on {HOST}:{PORT}")
+        print('/' + 90 * '#' + f"\\\n#\n#\t\t\t\tListening on {HOST}:{PORT}")
         loop.run_until_complete(main(token, queue.get, channel, prefix, desc))
         print("bla")
     except KeyboardInterrupt:
