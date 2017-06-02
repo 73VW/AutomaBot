@@ -6,9 +6,11 @@ in his TravisBot project (https://github.com/greut/travisbot)
 
 import asyncio
 import logging
+import shutil
 
 import discord
 from discord.ext import commands
+from pyfiglet import Figlet
 
 from bot import AutomaBot
 from tools import load_params
@@ -72,7 +74,6 @@ if __name__ == "__main__":
     app = make_app(queue.put)
 
     loop = asyncio.get_event_loop()
-    print(loop)
     if debug:
         loop.set_debug(True)
         logging.getLogger('asyncio').setLevel(logging.DEBUG)
@@ -83,11 +84,14 @@ if __name__ == "__main__":
     server = loop.create_server(handler, host=HOST, port=PORT)
     try:
         srv = loop.run_until_complete(server)
-        with open('art.txt', 'r', encoding='utf-8') as f:
-            print(f.read())
-        print('/' + 90 * '#' + f"\\\n#\n#\t\t\t\tListening on {HOST}:{PORT}")
+        terminal_size = shutil.get_terminal_size((80, 20))[0]
+        TOPBAR = "/" + "#" * (terminal_size-2) + "\\\n"
+        print(TOPBAR)
+        print(Figlet(font='banner').renderText('  AUTOMABOT'))
+        print("\\" + "#" * (terminal_size-2) + "/")
+        print(TOPBAR)
+        print(f"{f' Listening on: {HOST}:{PORT} ': ^{terminal_size}}")
         loop.run_until_complete(main(token, queue.get, channel, prefix, desc))
-        print("bla")
     except KeyboardInterrupt:
         pass
 
