@@ -2,8 +2,8 @@
 
 set -xe
 
-pycodestyle AutomaBot
-pydocstyle --add-ignore=D401 AutomaBot
-isort --check-only --diff --recursive AutomaBot
-flake8 AutomaBot
+pycodestyle mybot
+pydocstyle --add-ignore=D401 mybot
+isort --check-only --diff --recursive mybot
+flake8 mybot
 rstcheck README.rst
