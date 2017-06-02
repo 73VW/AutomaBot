@@ -1,7 +1,8 @@
 """Discord bot."""
 
-import discord
 import shutil
+
+import discord
 from discord.ext import commands
 
 from tools import make_embed_message
@@ -22,6 +23,7 @@ class AutomaBot(commands.Bot):
         super().__init__(**options)
         self.get = get
         self.update_channel = update_channel
+        self.terminal_size = shutil.get_terminal_size((80, 20))[0]
 
     async def on_ready(self):
         """
@@ -32,7 +34,7 @@ class AutomaBot(commands.Bot):
         """
         self_username = self.user.name + "#" + self.user.discriminator
         self.load_extensions()
-        print(f"{f' Logged in as {self_username} ': ^{shutil.get_terminal_size((80,20))[0]}}")
+        print(f"""{f' Logged in as {self_username}': ^{self.terminal_size}}""")
         await self.notification_handler()
 
     async def on_command_error(self, exception, context):
@@ -74,7 +76,7 @@ class AutomaBot(commands.Bot):
             except Exception as e:
                 exc = '{}: {}'.format(type(e).__name__, e)
                 print('Failed to load extension {}\n{}'.format(extension, exc))
-        print(f"{f' Extensions loaded ': ^{shutil.get_terminal_size((80,20))[0]}}")
+        print(f"{f' Extensions loaded ': ^{self.terminal_size}}")
 
     async def notification_handler(self):
         """
@@ -82,9 +84,9 @@ class AutomaBot(commands.Bot):
 
         Datas are sent by the api when a light state changes.
         """
-        print(f"{f' Fully functionnal ': ^{shutil.get_terminal_size((80,20))[0]}}")
-        print(f"{f' Type Ctrl + C to close ': ^{shutil.get_terminal_size((80,20))[0]}}")
-        print("\n\\" + "#" * (shutil.get_terminal_size((100,20))[0]-2) + "/")
+        print(f"{f' Fully functionnal ': ^{self.terminal_size}}")
+        print(f"{f' Type Ctrl + C to close ': ^{self.terminal_size}}")
+        print("\n\\" + "#" * (self.terminal_size-2) + "/")
         while not self.is_closed:
             data = await self.get()
             data["author"] = "AutomaBot"

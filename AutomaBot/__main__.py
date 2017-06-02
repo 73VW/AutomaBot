@@ -84,14 +84,14 @@ if __name__ == "__main__":
     server = loop.create_server(handler, host=HOST, port=PORT)
     try:
         srv = loop.run_until_complete(server)
-        TOPBAR = "/" + "#" * (shutil.get_terminal_size((100,20))[0]-2) + "\\\n"
+        terminal_size = shutil.get_terminal_size((80, 20))[0]
+        TOPBAR = "/" + "#" * (terminal_size-2) + "\\\n"
         print(TOPBAR)
         print(Figlet(font='banner').renderText('  AUTOMABOT'))
-        print("\\" + "#" * (shutil.get_terminal_size((100,20))[0]-2) + "/")
+        print("\\" + "#" * (terminal_size-2) + "/")
         print(TOPBAR)
-        print(f"{f' Listening on: {HOST}:{PORT} ': ^{shutil.get_terminal_size((80,20))[0]}}")
+        print(f"{f' Listening on: {HOST}:{PORT} ': ^{terminal_size}}")
         loop.run_until_complete(main(token, queue.get, channel, prefix, desc))
-        print("bla")
     except KeyboardInterrupt:
         pass
 
