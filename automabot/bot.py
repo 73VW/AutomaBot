@@ -23,7 +23,7 @@ class AutomaBot(commands.Bot):
         super().__init__(**options)
         self.get = get
         self.update_channel = update_channel
-        self.terminal_size = shutil.get_terminal_size((80, 20))[0]
+        self.terminal_width = shutil.get_terminal_size((80, 20))[0]
 
     async def on_ready(self):
         """
@@ -34,7 +34,7 @@ class AutomaBot(commands.Bot):
         """
         self_username = self.user.name + "#" + self.user.discriminator
         self.load_extensions()
-        print(f"""{f' Logged in as {self_username}': ^{self.terminal_size}}""")
+        print(f"""{f'Logged in as {self_username}': ^{self.terminal_width}}""")
         await self.notification_handler()
 
     async def on_command_error(self, exception, context):
@@ -45,8 +45,8 @@ class AutomaBot(commands.Bot):
         """
         if isinstance(exception, discord.ext.commands.errors.CommandNotFound):
             msg = """Sorry, this command is unknown to me... :japanese_ogre:\
-                    \nDo you need help? If so, just type \
-                    ***!help*** :sunglasses:"""
+                    \nDo you need help? \
+                    \nIf so, just type ***!help*** :sunglasses:"""
         elif isinstance(exception,
                         discord.ext.commands.errors.DisabledCommand):
             msg = ":sleeping:"
@@ -55,11 +55,19 @@ class AutomaBot(commands.Bot):
             msg = """:octagonal_sign: you are not allowed to do this.\
                     \nOnly an :alien: can wake me up..."""
         elif isinstance(exception,
+                        discord.ext.commands.errors.MissingRequiredArgument):
+            msg = """:thought_balloon: You forgot parameters.\
+                    \nType !help [command] to get help :interrobang:"""
+        elif isinstance(exception,
+                        APIconnectionError):
+            msg = """It seems we can't contact the API...:frowning2: \
+            \nTake a rest and retry later.:play_pause: """
+        elif isinstance(exception,
                         discord.ext.commands.errors.CommandInvokeError):
-            msg = exception.original
+            msg = "oups... " + str(exception)
             print(msg)
         else:
-            msg = type(exception)
+            msg = "oups inconnu... " + str(type(exception)) + str(exception)
             print(msg)
         await self.send_message(context.message.channel, msg)
 
@@ -76,7 +84,7 @@ class AutomaBot(commands.Bot):
             except Exception as e:
                 exc = '{}: {}'.format(type(e).__name__, e)
                 print('Failed to load extension {}\n{}'.format(extension, exc))
-        print(f"{f' Extensions loaded ': ^{self.terminal_size}}")
+        print(f"{' Extensions loaded ': ^{self.terminal_width}}")
 
     async def notification_handler(self):
         """
@@ -84,12 +92,18 @@ class AutomaBot(commands.Bot):
 
         Datas are sent by the api when a light state changes.
         """
-        print(f"{f' Fully functionnal ': ^{self.terminal_size}}")
-        print(f"{f' Type Ctrl + C to close ': ^{self.terminal_size}}")
-        print("\n\\" + "#" * (self.terminal_size-2) + "/")
+        print(f"{f' Fully functionnal ': ^{self.terminal_width}}")
+        print(f"{f' Type Ctrl + C to close ': ^{self.terminal_width}}")
+        print("\n\\" + "#" * (self.terminal_width-2) + "/")
         while not self.is_closed:
             data = await self.get()
             data["author"] = "AutomaBot"
             msg = make_embed_message(title="Update!", datas=data, bot=self)
             channel = self.get_channel(self.update_channel)
             await self.send_message(channel, embed=msg)
+
+
+class APIconnectionError(discord.ext.commands.errors.CommandError):
+    """Exception raised when automation can't connect to client."""
+
+    pass
