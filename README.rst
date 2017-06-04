@@ -23,6 +23,7 @@ Installation du bot
 ^^^^^^^^^^^^^^^^^^^
 
 Pour installer le bot il suffit d'éxecuter la commande suivante
+
 .. code-block:: console
 
     $ pip install automabot
@@ -31,6 +32,7 @@ Lancement du bot
 ^^^^^^^^^^^^^^^^
 
 Pour lancer le bot, il suffit d'exécuter
+
 .. code-block:: console
 
     $ automabot
