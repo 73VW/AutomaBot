@@ -20,7 +20,7 @@ Si l'état des lampes est changé depuis une autre plateforme que le bot, le bot
 Tutoriel
 --------
 Installation du bot
-^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^
 
 Pour installer le bot il suffit d'éxecuter la commande suivante
 .. code-block:: console
@@ -42,7 +42,6 @@ S'il s'agit du premier lancement, il faudra indiquer les éléments suivants:
 - le host du server de notifications
 - le port du server de notifications
 - l'id du channel discord sur lequel le bot va transmettre les notifications
->>>>>>> update readme
 - le préfixe des commandes qui permet d'appeler le bot
 - l'url du serveur sur lequel envoyer les requêtes pour connaître l'état des lampes
 - l'url du serveur sur lequel envoyer les requêtes pour changer l'état des lampes
