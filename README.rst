@@ -56,10 +56,7 @@ Les commandes sleep et wakeup ne sont disponible que par le propriétaire du cha
 Sources
 -------
 
-Discord api:
-Hug?
-Domoticz?
-Greut:
+
 
 
 
