@@ -34,7 +34,7 @@ class AutomaBot(commands.Bot):
         """
         self_username = self.user.name + "#" + self.user.discriminator
         self.load_extensions()
-        print(f"""{f'Logged in as {self_username}': ^{self.terminal_width}}""")
+        print(f"{f' Logged in as {self_username}': ^{self.terminal_width}}")
         await self.notification_handler()
 
     async def on_command_error(self, exception, context):
@@ -82,8 +82,8 @@ class AutomaBot(commands.Bot):
             try:
                 self.load_extension(extension)
             except Exception as e:
-                exc = '{}: {}'.format(type(e).__name__, e)
-                print('Failed to load extension {}\n{}'.format(extension, exc))
+                exc = f'{type(e).__name__}: {e}'
+                print(f'Failed to load extension {extension}\n{exc}')
         print(f"{' Extensions loaded ': ^{self.terminal_width}}")
 
     async def notification_handler(self):
@@ -92,8 +92,8 @@ class AutomaBot(commands.Bot):
 
         Datas are sent by the api when a light state changes.
         """
-        print(f"{f' Fully functionnal ': ^{self.terminal_width}}")
-        print(f"{f' Type Ctrl + C to close ': ^{self.terminal_width}}")
+        print(f"{' Fully functionnal ': ^{self.terminal_width}}")
+        print(f"{' Type Ctrl + C to close ': ^{self.terminal_width}}")
         print("\n\\" + "#" * (self.terminal_width-2) + "/")
         while not self.is_closed:
             data = await self.get()
