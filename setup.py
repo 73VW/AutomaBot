@@ -11,7 +11,7 @@ with open(path.join(here, 'README.rst'), 'r', encoding='utf-8') as f:
 
 setup(
     name='automabot',
-    version='0.0.1.dev20170604',  # see PEP-0440
+    version='0.1.3.dev20170604',  # see PEP-0440
     python_requires='>=3.6',
     author='Maël Pedretti & Chea Dany',
     author_email='mael.pedretti@he-arc.ch & dany.chea@he-arc.ch',
@@ -44,4 +44,10 @@ setup(
         'qa': ('flake8', 'isort', 'pycodestyle', 'pydocstyle', 'rstcheck'),
         'docs': ('Sphinx>=1.6.0', 'sphinxcontrib-trio')
     },
+    entry_points={
+       'console_scripts': [
+           'automabot = automabot.__main__:main',
+       ],
+    },
+    include_package_data=True
 )
