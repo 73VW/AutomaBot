@@ -37,7 +37,7 @@ setup(
         'discord.py>=0.16.8',
         'aiohttp>=1.0.0,<1.1.0',
         'pyfiglet>=0.7.5',
-		'toml>=0.9.2'
+        'toml>=0.9.2'
     ),
     extras_require={
         'fast': ('cchardet', 'aiodns'),  # making it faster (recommended)
