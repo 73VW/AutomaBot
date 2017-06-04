@@ -27,7 +27,7 @@ Tutoriel
 Lancement du bot
 ^^^^^^^^^^^^^^^^
 
-Pour lancer le bot, il suffit d'exécuter le fichier  :ref: `__main__.py`:.
+Pour lancer le bot, il suffit d'exécuter le fichier  :ref:`__main__` .
 
 Lors du lancement du bot, celui-ci demandera quelques informations afin de créer son fichier de configuration, si celui-ci n'existe pas déjà au préalable.
 Si il s'agit du premier lancement, il faudra indiquer les éléments suivants:
