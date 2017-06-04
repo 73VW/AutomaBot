@@ -59,7 +59,7 @@ Exemple
 Contenu du fichier de configuration:
 
 .. code-block::
-  
+
    [bot]
    #token Discord
    token = "..."
@@ -71,7 +71,6 @@ Contenu du fichier de configuration:
    [automation]
    url_get = "http://localhost:8000/light-natural"
    url_post = "http://localhost:8000/light"
-
 
 
 
