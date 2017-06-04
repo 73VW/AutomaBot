@@ -1,3 +1,0 @@
-[console_scripts]
-automabot = automabot.__main__:main
-
