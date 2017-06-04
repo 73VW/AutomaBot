@@ -51,8 +51,25 @@ Afin de lister les commandes du bot, il faut taper la commande help, précédée
 - sleep : permet de mettre le bot en veille
 - wakeup : permet de réveiller le bot
 
-Les commandes sleep et wakeup ne sont disponible que par le propriétaire du channel, ou par Maël Pedretti. [#mp]_
+Les commandes sleep et wakeup ne sont disponibles que par le propriétaire du channel, ou par Maël Pedretti. [#mp]_
 
+Exemple
+-------
+
+Contenu du fichier de configuration:
+
+.. code-block:: toml
+  [bot]
+  #token Discord
+  token = "..."
+  HOST = "127.0.0.1"
+  PORT = 42424
+  update_channel_id = "..."
+  bot_command_prefix = "!"
+  bot_description = "A bot used as front_end for an automation application.\nThere are a number of utility commands being showcased here."
+  [automation]
+  url_get = "http://localhost:8000/light-natural"
+  url_post = "http://localhost:8000/light"
 
 
 
