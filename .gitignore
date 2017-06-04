@@ -1,5 +1,8 @@
-/light
-/automabot/__pycache__
 check.bash
 check.txt
 config.*
+automabot/__pycache__
+automabot.egg-info/
+build/
+dist/
+light/
