@@ -19,7 +19,7 @@ Si l'état des lampes est changé depuis une autre plateforme que le bot, le bot
 
 Tutoriel
 --------
-Lancement du bot
+Installation du bot
 ^^^^^^^^^^^^^^^^
 
 Pour installer le bot il suffit d'éxecuter la commande suivante
