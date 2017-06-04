@@ -32,7 +32,7 @@ Pour lancer le bot, il suffit d'exécuter le fichier  `__main__.py <automabot/__
 Lors du lancement du bot, celui-ci demandera quelques informations afin de créer son fichier de configuration, si celui-ci n'existe pas déjà au préalable.
 Si il s'agit du premier lancement, il faudra indiquer les éléments suivants:
 
-- le token du bot, que l'on peut récuperer sur Discord ()
+- le token du bot Discord, que l'on peut récuperer sur Discord ()
 - le host
 - le port
 - l'id du channel discord sur lequel le bot va répondre
@@ -51,7 +51,7 @@ Afin de lister les commandes du bot, il faut taper la commande help, précédée
 - sleep : permet de mettre le bot en veille
 - wakeup : permet de réveiller le bot
 
-Les commandes sleep et wakeup ne sont disponible que par le propriétaire du channel, ou par Maël Pedretti.[#mp]_
+Les commandes sleep et wakeup ne sont disponible que par le propriétaire du channel, ou par Maël Pedretti. [#mp]_
 
 
 
@@ -59,4 +59,3 @@ Les commandes sleep et wakeup ne sont disponible que par le propriétaire du cha
 
 .. [#mp] <mael.pedretti@he-arc.ch>
 .. [#dc] <dany.chea@he-arc.ch>
-.. include:: ./automabot/__main__.py
