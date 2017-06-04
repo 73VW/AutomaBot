@@ -13,8 +13,8 @@ setup(
     name='automabot',
     version='0.0.1.dev20170604',  # see PEP-0440
     python_requires='>=3.6',
-    author='Maël Pedretti & Chea Dany',
-    author_email='quentin.vaucher@he-arc.ch & andre.netodasilva@he-arc.ch',
+    author='MaÃ«l Pedretti & Chea Dany',
+    author_email='mael.pedretti@he-arc.ch & dany.chea@he-arc.ch',
     url='https://github.com/73VW/AutomaBot',
     license='https://opensource.org/licenses/BSD-3-Clause',
     description=__doc__,
@@ -35,9 +35,9 @@ setup(
     ),
     install_requires=(
         'discord.py>=0.16.8',
-        'aiohttp>=2.1.0',
+        'aiohttp>=1.0.0,<1.1.0',
         'pyfiglet>=0.7.5',
-		'toml>=0.9.2'
+        'toml>=0.9.2'
     ),
     extras_require={
         'fast': ('cchardet', 'aiodns'),  # making it faster (recommended)
