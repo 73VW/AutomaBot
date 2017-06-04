@@ -2,6 +2,11 @@ language: python
 python:
   - "3.6"
 
+install:
+  - pip install -e .[fast,qa]
+
+cache:
+    pip
 # command to run tests
 script:
   - ./test.sh
