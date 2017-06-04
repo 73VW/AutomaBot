@@ -6,7 +6,6 @@ import os.path
 import discord
 import toml
 
-
 states = "Off", "On"
 
 here = os.path.abspath(os.path.dirname(__file__))
