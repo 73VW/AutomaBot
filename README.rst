@@ -58,18 +58,18 @@ Exemple
 
 Contenu du fichier de configuration:
 
-.. code-block:: 
-  [bot]
-  #token Discord
-  token = "..."
-  HOST = "127.0.0.1"
-  PORT = 42424
-  update_channel_id = "..."
-  bot_command_prefix = "!"
-  bot_description = "A bot used as front_end for an automation application.\nThere are a number of utility commands being showcased here."
-  [automation]
-  url_get = "http://localhost:8000/light-natural"
-  url_post = "http://localhost:8000/light"
+.. code-block::
+   [bot]
+   #token Discord
+   token = "..."
+   HOST = "127.0.0.1"
+   PORT = 42424
+   update_channel_id = "..."
+   bot_command_prefix = "!"
+   bot_description = "A bot used as front_end for an automation application.\nThere are a number of utility commands being showcased here."
+   [automation]
+   url_get = "http://localhost:8000/light-natural"
+   url_post = "http://localhost:8000/light"
 
 
 
