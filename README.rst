@@ -58,7 +58,7 @@ Exemple
 
 Contenu du fichier de configuration:
 
-.. code-block:: toml
+.. code-block:: 
   [bot]
   #token Discord
   token = "..."
