@@ -1,0 +1,22 @@
+[bot]
+    [bot.value]
+    token = ""
+    HOST = "127.0.0.1"
+    PORT = 42424
+    update_channel_id = ""
+    bot_command_prefix = "!"
+    bot_description = "A bot used as front_end for an automation application.\nThere are a number of utility commands being showcased here."
+    [bot.description]
+    token = "Discord App Token"
+    HOST = "Web Server host"
+    PORT = "Web Server Port"
+    update_channel_id = "Discord notifications channel id"
+    bot_command_prefix = "AutomaBot command prefix"
+    bot_description = "Bot description shown in help"
+[automation]
+    [automation.value]
+    url_get = ""
+    url_post = ""
+    [automation.description]
+    url_get = "Url used to get light states"
+    url_post = "Url used to set light states"

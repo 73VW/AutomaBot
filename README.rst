@@ -8,30 +8,43 @@ Par Maël Pedretti [#mp]_ et Dany Chea [#dc]_
 Introduction
 ------------
 
-Création d'un bot sur discord qui va servir de relais entre le client et le serveur, permettant une manipulation simple de fonctions domotiques, tel que le contrôle de l'allumage de lampe à distance.
+Création d'un bot sur discord qui va servir de relais entre le client et le serveur, permettant une manipulation simple de fonctions domotiques, tel que le contrôle de l'allumage de lampes à distance.
 
 Ce projet permet de faire une simulation d'acquisition des états des lampes en différents endroits, que l'on pourra observer via une page HTML.
-Utilisateur enverra une commande au bot, qui va transmettre cette commande au serveur, et retransmettra sa réponse à l'utilisateur dans discord.
+L'tilisateur enverra une commande au bot, qui va transmettre cette commande au serveur, et retransmettra sa réponse à l'utilisateur dans discord.
+
+Si l'état des lampes est changé depuis une autre plateforme que le bot, le bot transmettra une notification dans le channel entré dans les paramètres.
 
 
 
 Tutoriel
 --------
+Installation du bot
+^^^^^^^^^^^^^^^^^^^
+
+Pour installer le bot il suffit d'éxecuter la commande suivante
+.. code-block:: console
+
+    $ pip install automabot
+
 Lancement du bot
 ^^^^^^^^^^^^^^^^
 
-Pour lancer le bot, il suffit d'exécuter le fichier  `__main__.py <automabot/__main__.py>`_ .
+Pour lancer le bot, il suffit d'exécuter
+.. code-block:: console
+
+    $ automabot
 
 Lors du lancement du bot, celui-ci demandera quelques informations afin de créer son fichier de configuration, si celui-ci n'existe pas déjà au préalable.
-Si il s'agit du premier lancement, il faudra indiquer les éléments suivants:
+S'il s'agit du premier lancement, il faudra indiquer les éléments suivants:
 
-- le token du bot Discord, que l'on peut récuperer sur Discord (`how to get a Discord token <https://github.com/reactiflux/discord-irc/wiki/Creating-a-discord-bot-&-getting-a-token>`_)
-- le host
-- le port
-- l'id du channel discord sur lequel le bot va répondre
+- le token du bot Discord, que l'on peut récuperer sur `le portail développers de Discord <https://discordapp.com/developers/applications/me>`_
+- le host du server de notifications
+- le port du server de notifications
+- l'id du channel discord sur lequel le bot va transmettre les notifications
 - le préfixe des commandes qui permet d'appeler le bot
-- l'url du serveur sur lequel envoyer les requêtes GET
-- l'url du serveur sur lequel envoyer les requêtes POST
+- l'url du serveur sur lequel envoyer les requêtes pour connaître l'état des lampes
+- l'url du serveur sur lequel envoyer les requêtes pour changer l'état des lampes
 
 Liste des commandes
 ^^^^^^^^^^^^^^^^^^^
@@ -44,7 +57,7 @@ Afin de lister les commandes du bot, il faut taper la commande help, précédée
 - sleep : permet de mettre le bot en veille
 - wakeup : permet de réveiller le bot
 
-Les commandes sleep et wakeup ne sont disponibles que par le propriétaire du channel, ou par Maël Pedretti. [#mp]_
+Les commandes sleep et wakeup ne sont disponibles que pour le propriétaire du channel, ou par Maël Pedretti. [#mp]_
 
 .. [#mp] <mael.pedretti@he-arc.ch>
 .. [#dc] <dany.chea@he-arc.ch>

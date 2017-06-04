@@ -54,7 +54,6 @@ async def bot_main(token, queue, channel, prefix, desc):
 
     await bot.start(token)
 
-
 def main():
     """Run main program."""
     params = load_params(param="bot")
@@ -90,14 +89,12 @@ def main():
         print("\\" + "#" * (terminal_width-2) + "/")
         print(TOPBAR)
         print(f"{f' Listening on: {HOST}:{PORT} ': ^{terminal_width}}")
-        loop.run_until_complete(bot_main(token,
-                                         queue.get, channel, prefix, desc))
+        loop.run_until_complete(bot_main(token, queue.get, channel, prefix, desc))
     except KeyboardInterrupt:
         pass
 
     srv.close()
     loop.close()
-
 
 if __name__ == "__main__":
     """Catch main function."""
