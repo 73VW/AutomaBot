@@ -18,11 +18,6 @@ setup(
         'pyfiglet>=0.7.5',
         'toml>=0.9.2'
     ),
-    extras_require={
-        'fast': ('cchardet', 'aiodns'),  # making it faster (recommended)
-        'qa': ('flake8', 'isort', 'pycodestyle', 'pydocstyle', 'rstcheck'),
-        'docs': ('Sphinx>=1.6.0', 'sphinxcontrib-trio')
-    },
     entry_points={
        'console_scripts': [
            'automabot = automabot.__main__:main',
