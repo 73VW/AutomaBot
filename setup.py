@@ -11,12 +11,5 @@ with open(path.join(here, 'README.rst'), 'r', encoding='utf-8') as f:
 
 setup(
     setup_requires=['pbr'],
-    pbr=True,
-    install_requires=(
-        'discord.py>=0.16.8',
-        'aiohttp>=1.0.0,<1.1.0',
-        'pyfiglet>=0.7.5',
-        'toml>=0.9.2'
-    ),
-    include_package_data=True
+    pbr=True
 )
