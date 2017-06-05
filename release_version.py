@@ -30,7 +30,17 @@ version_re = re.compile('^Version: (.+)$', re.M)
 def get_version():
     d = dirname(__file__)
 
-    if isdir(join(d, '.git')):
+    if isdir(join(d, '.git')):# Get the version using "git describe".
+        cmd = 'git branch'.split()
+        try:
+            branches = subprocess.check_output(cmd).decode().strip()
+        except subprocess.CalledProcessError as e:
+            print(e.output)
+            print('Unable to get branches')
+            exit(1)
+
+        print(branches)
+
         # Get the version using "git describe".
         cmd = 'git describe master --tags --match [0-9]*'.split()
         try:
