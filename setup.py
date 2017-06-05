@@ -3,6 +3,7 @@
 from os import path
 from setuptools import setup, find_packages
 
+import release_version
 
 here = path.abspath(path.dirname(__file__))
 
@@ -11,7 +12,7 @@ with open(path.join(here, 'README.rst'), 'r', encoding='utf-8') as f:
 
 setup(
     name='automabot',
-    version='0.1.3.dev20170604',  # see PEP-0440
+    version=release_version.get_version(),  # see PEP-0440
     python_requires='>=3.6',
     author='Maël Pedretti & Chea Dany',
     author_email='mael.pedretti@he-arc.ch & dany.chea@he-arc.ch',
