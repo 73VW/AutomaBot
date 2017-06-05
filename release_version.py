@@ -13,7 +13,7 @@ and use the results of get_version() as your package version:
         ...
     )
 
-Based on this code from Pwithnall : 
+Based on this code from Pwithnall :
 https://gist.github.com/pwithnall/7bc5f320b3bdf418265a
 """
 
@@ -40,7 +40,8 @@ def get_version():
             print('Unable to get version number from git tags')
             exit(1)
 
-        print(version)
+        print(str(version))
+        print("ok")
         exit(1)
 
         # PEP 386 compatibility
