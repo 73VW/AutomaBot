@@ -13,7 +13,7 @@ with open(path.join(here, 'README.rst'), 'r', encoding='utf-8') as f:
 
 setup(
     name='automabot',
-    version=,  # see PEP-0440
+    version=release,  # see PEP-0440
     python_requires='>=3.6',
     author='Maël Pedretti & Chea Dany',
     author_email='mael.pedretti@he-arc.ch & dany.chea@he-arc.ch',
