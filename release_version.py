@@ -19,10 +19,10 @@ https://gist.github.com/pwithnall/7bc5f320b3bdf418265a
 
 __all__ = ('get_version')
 
-from os.path import dirname, isdir, join
 import os
 import re
 import subprocess
+from os.path import dirname, isdir, join
 
 version_re = re.compile('^Version: (.+)$', re.M)
 
@@ -35,7 +35,8 @@ def get_version():
         cmd = 'git describe master --tags --match [0-9]*'.split()
         try:
             version = subprocess.check_output(cmd).decode().strip()
-        except subprocess.CalledProcessError:
+        except subprocess.CalledProcessError as e:
+            print(e.output)
             print('Unable to get version number from git tags')
             exit(1)
 
