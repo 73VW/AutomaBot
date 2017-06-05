@@ -19,6 +19,7 @@ deploy:
   provider: pypi
   distributions: sdist bdist_wheel
   on:
+    tags: true
     branch:
       - master
       - /(\d+\.)?(\d+\.)?(\*|\d+)$/
