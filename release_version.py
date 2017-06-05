@@ -13,7 +13,7 @@ and use the results of get_version() as your package version:
         ...
     )
 
-All credits for this script go to pwithnall. Find this code here:
+Based on this code from Pwithnall : 
 https://gist.github.com/pwithnall/7bc5f320b3bdf418265a
 """
 
@@ -31,24 +31,17 @@ def get_version():
     d = dirname(__file__)
 
     if isdir(join(d, '.git')):# Get the version using "git describe".
-        cmd = 'git branch'.split()
-        try:
-            branches = subprocess.check_output(cmd).decode().strip()
-        except subprocess.CalledProcessError as e:
-            print(e.output)
-            print('Unable to get branches')
-            exit(1)
-
-        print(branches)
-
         # Get the version using "git describe".
-        cmd = 'git describe master --tags --match [0-9]*'.split()
+        cmd = 'git tag -l [0-9]* "https://github.com/73VW/AutomaBot"'.split()
         try:
             version = subprocess.check_output(cmd).decode().strip()
         except subprocess.CalledProcessError as e:
             print(e.output)
             print('Unable to get version number from git tags')
             exit(1)
+
+        print(version)
+        exit(1)
 
         # PEP 386 compatibility
         if '-' in version:
