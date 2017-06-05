@@ -24,6 +24,9 @@ import subprocess
 
 def get_version():
     """Return last git tag."""
+    minor_version = check_output(['git', 'rev-list',
+                              '--count', 'master']).decode('latin-1').strip()
+    print(minor_version)
     cmd = 'git tag -l [0-9]* "https://github.com/73VW/AutomaBot"'.split()
     try:
         version = subprocess.check_output(cmd).decode().strip()
