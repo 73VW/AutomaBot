@@ -32,7 +32,7 @@ def get_version():
 
     if isdir(join(d, '.git')):
         # Get the version using "git describe".
-        cmd = 'git describe --tags --match [0-9]*'.split()
+        cmd = 'git describe master --tags --match [0-9]*'.split()
         try:
             version = subprocess.check_output(cmd).decode().strip()
         except subprocess.CalledProcessError:
