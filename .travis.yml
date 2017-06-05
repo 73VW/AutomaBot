@@ -10,6 +10,7 @@ notifications:
   email:
     on_failure: never
     on_pull_requests: never
+all_branches: true
 deploy:
   provider: pypi
   distributions: sdist bdist_wheel
