@@ -1,7 +1,14 @@
+=============
 ``AutomaBot``
 =============
+
 .. image:: https://travis-ci.org/73VW/AutomaBot.svg?branch=master
     :target: https://travis-ci.org/73VW/AutomaBot
+    :alt: Build Status
+
+.. image:: https://badge.fury.io/py/automabot.svg
+    :target: https://badge.fury.io/py/automabot
+    :alt: PyPi Version
 
 Par Maël Pedretti [#mp]_ et Dany Chea [#dc]_
 
