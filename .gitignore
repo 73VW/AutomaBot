@@ -6,3 +6,4 @@ automabot.egg-info/
 build/
 dist/
 light/
+travis.log
