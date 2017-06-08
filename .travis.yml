@@ -3,13 +3,17 @@ language: python
 cache: pip
 
 python:
-- '3.6'
+  - '3.6'
 
 install:
-- pip install tox tox-travis
+  - pip install tox tox-travis
 
-script:
-- tox
+env:
+  - TEST_SUITE=qa
+  - TEST_SUITE=docs
+
+script: "tox -e $TEST_SUITE"
+
 notifications:
   email:
     on_failure: never

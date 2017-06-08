@@ -6,3 +6,5 @@ automabot.egg-info/
 build/
 dist/
 light/
+docs/_build
+docs/_templates
