@@ -20,6 +20,7 @@ notifications:
     on_pull_requests: never
 
 deploy:
+  skip_cleanup: true
   provider: pypi
   distributions: sdist bdist_wheel
   on:
