@@ -10,8 +10,9 @@ install:
 
 env:
   - TEST_SUITE=qa
+  - TEST_SUITE=docs
 
-script: "bundle exec rake test:$TEST_SUITE"
+script: "bundle exec tox -e $TEST_SUITE"
 
 notifications:
   email:
