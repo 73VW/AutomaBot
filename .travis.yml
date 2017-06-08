@@ -12,7 +12,7 @@ env:
   - TEST_SUITE=qa
   - TEST_SUITE=docs
 
-script: "bundle exec tox -e $TEST_SUITE"
+script: "tox -e $TEST_SUITE"
 
 notifications:
   email:
