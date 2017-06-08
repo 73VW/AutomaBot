@@ -9,7 +9,6 @@ install:
   - pip install tox tox-travis
 
 env:
-  - TEST_SUITE=fast
   - TEST_SUITE=qa
 
 script: "bundle exec rake test:$TEST_SUITE"
