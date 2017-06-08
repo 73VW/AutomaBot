@@ -9,8 +9,8 @@ install:
   - pip install tox tox-travis
 
 env:
-  - TEST_SUITE=qa
   - TEST_SUITE=docs
+  - TEST_SUITE=qa
 
 script: "tox -e $TEST_SUITE"
 
