@@ -1,6 +1,6 @@
 """Automabot bot for Discord."""
 
-from setuptools import setup, find_packages
+from setuptools import setup
 
 
 setup(
