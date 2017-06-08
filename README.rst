@@ -1,6 +1,5 @@
-=============
-``AutomaBot``
-=============
+AutomaBot
+=========
 
 .. image:: https://travis-ci.org/73VW/AutomaBot.svg?branch=master
     :target: https://travis-ci.org/73VW/AutomaBot
@@ -11,7 +10,7 @@
     :alt: PyPi Version
 
 .. image:: https://readthedocs.org/projects/automabot/badge/?version=latest
-    :target: http://automabot.readthedocs.io/en/latest/?badge=latest
+    :target: http://automabot.readthedocs.io/fr/latest/?badge=latest
     :alt: Documentation Status
 
 Par Maël Pedretti [#mp]_ et Dany Chea [#dc]_

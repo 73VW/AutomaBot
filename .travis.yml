@@ -8,9 +8,10 @@ python:
 install:
   - pip install tox tox-travis
 
+# use next lines if you want to use travis parallel test
 env:
-  - TEST_SUITE=qa
   - TEST_SUITE=docs
+  - TEST_SUITE=qa
 
 script: "tox -e $TEST_SUITE"
 
@@ -20,6 +21,7 @@ notifications:
     on_pull_requests: never
 
 deploy:
+  skip_cleanup: true
   provider: pypi
   distributions: sdist bdist_wheel
   on:
