@@ -21,6 +21,10 @@ Welcome to automabot's documentation!
     :target: https://badge.fury.io/py/automabot
     :alt: PyPi Version
 
+.. image:: https://readthedocs.org/projects/automabot/badge/?version=latest
+    :target: http://automabot.readthedocs.io/en/latest/?badge=latest
+    :alt: Documentation Status
+
 Par Maël Pedretti [#mp]_ et Dany Chea [#dc]_
 
 Introduction
