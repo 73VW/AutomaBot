@@ -8,11 +8,14 @@ python:
 install:
   - pip install tox tox-travis
 
-env:
-  - TEST_SUITE=docs
-  - TEST_SUITE=qa
+# use next lines if you want to use travis parallel test
+# env:
+  # - TEST_SUITE=docs
+  # - TEST_SUITE=qa
 
-script: "tox -e $TEST_SUITE"
+# script: "tox -e $TEST_SUITE"
+
+script: tox
 
 notifications:
   email:
